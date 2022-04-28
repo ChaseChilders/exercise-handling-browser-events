@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping List</title>
 </head>
+
 <body>
   <!-- HTML goes here -->
   <h1>Things to Buy</h1>
 
   <ul id="shoppingList">
-    <li>Waffles</li>
-    <li>Pancakes</li>
-    <li>Bacon</li>
-    <li>Eggs</li>
+    <li>Waffles<button>Remove</button></li>
+    <li>Pancakes<button>Remove</button></li>
+    <li>Bacon<button>Remove</button></li>
+    <li>Eggs<button>Remove</button></li>
   </ul>
 
   <form id="newItemForm">
@@ -25,7 +27,33 @@
 
   <script>
     // JavaScript goes here
-    
+    const newItemForm = document.querySelector("#newItemForm")
+    const shoppingList = document.querySelector("#shoppingList")
+    const userInput = document.querySelector("#item")
+    const addButton = document.querySelector("#addButton")
+    let i = 100
+
+
+    newItemForm.addEventListener('submit', function (event) {
+      event.preventDefault()
+      // add user input to li
+      const li = document.createElement('li')
+      i++
+      li.innerText = (`${userInput.value}` + i)
+      // append ul child
+      shoppingList.appendChild(li);
+
+      const deleteButton = document.createElement('button')
+      deleteButton.innerText = ("Remove" + i)
+      li.appendChild(deleteButton)
+
+      deleteButton.addEventListener('click', function (event) {
+        event.preventDefault()
+        if (li.innerText[i] == deleteButton.innerText[i])
+          li.remove()
+      })
+    })
   </script>
 </body>
+
 </html>

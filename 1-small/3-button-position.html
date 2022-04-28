@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button Position</title>
 </head>
+
 <body>
+  <button class="button">x and y</button>
   <!-- HTML goes here -->
 
   <script>
     // JavaScript goes here
+    const button = document.querySelector('.button')
+    button.addEventListener('click', function (event) {
+      let x = event.screenX
+      let y = event.screenY
+      alert(x)
+      alert(y)
+    })
 
   </script>
 </body>
+
 </html>

@@ -1,16 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button Position</title>
 </head>
+
 <body>
+
   <!-- HTML goes here -->
+  <button class="counter-add">+</button>
+  <button class="counter-subtract">-</button>
+  <h1 class="counter-display">0</h1>
 
   <script>
     // JavaScript goes here
+    const addButton = document.querySelector(".counter-add")
+    const subtractButton = document.querySelector(".counter-subtract")
+    const counter = document.querySelector(".counter-display")
+    let count = 0
+    updateCounter()
+    addButton.addEventListener('click', function () {
+      count++
+      updateCounter()
+    })
+
+    subtractButton.addEventListener('click', function () {
+      count--
+      updateCounter()
+    })
+
+    function updateCounter() {
+      counter.innerText = count;
+    }
 
   </script>
 </body>
+
 </html>

@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Button Position</title>
 </head>
+
 <body>
+  <span class="circles">⭕️</span>
+  <span class="circles">⭕️</span>
+  <span class="circles">⭕️</span>
+  <span class="circles">⭕️</span>
+  <span class="circles">⭕️</span>
+  <span class="circles">⭕️</span>
   <!-- HTML goes here -->
 
   <script>
     // JavaScript goes here
-
+    const circles = document.querySelectorAll(".circles")
+    for (let circle of circles) {
+      circle.addEventListener('click', function (event) {
+        circle.innerText = "❌"
+      })
+    }
   </script>
 </body>
+
 </html>
